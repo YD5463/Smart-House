@@ -1,0 +1,298 @@
+
+::-webkit-scrollbar {
+    display: none;
+}
+body {
+	overflow: hidden;
+	color:#fff;
+	font-family: 'Quicksand', sans-serif;
+	background-color:#404346;
+}
+p {
+	font-family: 'Oxygen', sans-serif;
+}
+.sidebar {
+	background-color:#151A1D;
+	position:absolute;
+	top:0px;
+	left:0px;
+	bottom:0px;
+	width:50px;
+}
+
+.bold {
+	font-weight: bold;
+}
+
+.color-green {
+	background-color:green;
+	color:white;
+}
+.color-white {
+	font-size: 20;
+	font-family: sans-serif;
+	background-color:white;
+	color:black;
+}
+
+.color-dark {
+	background-color:#2D3134;
+	color:white;
+}
+.panels {
+	height: 100%;
+	position:absolute;
+	top:0px;
+	bottom:100px;
+	left:55px;
+	right:0px;
+	overflow-x: auto;
+	overflow-y: hidden;
+	white-space: nowrap;
+	background-color:#404346;
+}
+.panel {
+	overflow-y: hidden;
+	white-space: nowrap;
+	display:inline-block;
+	background-color:#25282A;
+	height:100%;
+	width:33.3%;
+	margin-top:0px;
+	justify-content: center;
+  align-items: center;
+}
+.panel h1 {
+	margin-left:20px;
+}
+.button {
+	text-align:center;
+	display: table;
+	margin: auto;
+	margin-top:10px;
+	width:70px;
+	height:40px;
+	padding:10px 30px 10px 30px;
+	-webkit-border-radius: 20px;
+  	-moz-border-radius: 20px;
+  border-radius: 20px;
+	line-height: 2.3;
+}
+.half-button {
+	text-align:center;
+	display: inline-block;
+	margin: auto;
+	margin-top:10px;
+	margin-left:25px;
+	width:51px;
+	height:40px;
+	padding:10px 30px 10px 30px;
+	-webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  border-radius: 20px;
+	line-height: 2.3;
+}
+.a-noeffect {
+	text-decoration: none;
+	color:black;
+}
+input[type="checkbox"]
+{
+	margin-left: 10px;
+    position:relative;
+    width:80px;
+    height: 40px;
+    -webkit-appearance:none;
+    background:#c6c6c6;
+    outline:none;
+    border-radius:20px;
+    box-shadow:inset 0 0 5px rgba(0,0,0,.2);
+    transition: .5s;
+
+}
+input:checked[type="checkbox"]{
+    background:#03a9f4;
+}
+input[type="checkbox"]:before{
+    content: '';
+    position: absolute;
+    width:40px;
+    height:40px;
+    border-radius:20px;
+    top:0;
+    left:0;
+    background:#fff;
+    transform: scale(1.1);
+    box-shadow:0 2px 5px rgba(0,0,0,.2);
+    transition: .5s;
+}
+input:checked[type="checkbox"]:before{
+    left:40px;
+}
+
+.add-Button {
+  cursor: pointer;
+  width: 35%;
+  text-align: center;
+  font-weight: bold;
+  margin-left: 2.5%;
+  background: #339DE7;
+  border:none;
+  border-radius: 50px;
+  color: #fff;
+  padding: 0 15px;
+  font-size: 120%;
+  height: 60px;
+  outline: none;
+  transition: 0.2s;
+}
+
+.add-Button:hover {
+  -webkit-box-shadow: 0px 0px 25px 0px rgba(0,0,0,0.2);
+-moz-box-shadow: 0px 0px 25px 0px rgba(0,0,0,0.2);
+box-shadow: 0px 0px 25px 0px rgba(0,0,0,0.2);
+  transform: scale(1.07);
+  transition: 0.2s;
+}
+/* The popup form - hidden by default */
+.form-popup {
+  display: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  border: 3px solid #f1f1f1;
+  z-index: 9;
+}
+
+/* Add styles to the form container */
+.form-container {
+
+  max-width: 700px;
+  padding: 10px;
+  background-color: white;
+  color: rgb(0,0,0);
+}
+
+/* Full-width input fields */
+.form-container input[type=text], select {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  border: none;
+  background: #f1f1f1;
+}
+
+/* When the inputs get focus, do something */
+.form-container input[type=text]:focus, select:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+/* Set a style for the submit/login button */
+.form-container .btn {
+  background-color: #4CAF50;
+  color: white;
+  padding: 16px 20px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  margin-bottom:10px;
+  opacity: 0.8;
+}
+
+/* Add a red background color to the cancel button */
+.form-container .cancel {
+  background-color: red;
+}
+
+/* Add some hover effects to buttons */
+.form-container .btn:hover, .open-button:hover {
+  opacity: 1;
+}
+
+
+.rotate {
+margin-top:200px;
+/* Safari */
+-webkit-transform: rotate(-90deg);
+
+/* Firefox */
+-moz-transform: rotate(-90deg);
+
+/* IE */
+-ms-transform: rotate(-90deg);
+
+/* Opera */
+-o-transform: rotate(-90deg);
+
+/* Internet Explorer */
+filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
+
+}
+
+#change_password_form input{
+  font-family: "Roboto", sans-serif;
+  outline: 0;
+  background: #f2f2f2;
+  width: 100%;
+  border: 0;
+  margin:0 0 15px;
+  padding: 15px;
+  box-sizing: border-box;
+  font-size: 15px;
+  border-radius: 20px;
+}
+
+#change_password_form button{
+  font-family: "Roboto", sans-serif;
+  outline: 0;
+  text-transform: uppercase;
+  background: #33ff33;
+  width: 100%;
+  border: 0;
+  padding: 15px;
+  color: #fff;
+  font-size: 14px;
+  cursor: pointer;
+  border-radius: 20px;
+}
+.sidenav {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+}
+
+.sidenav a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+.sidenav a:hover {
+  color: #f1f1f1;
+}
+
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+

@@ -1,0 +1,47 @@
+<html class="animated fadeInDown">
+  
+  <head>
+    <title>Login/Reg page</title>
+    <link rel="stylesheet" href="static\style.css" type="text/css">
+    <link rel="stylesheet" href="static\animate.css" type="text/css">
+      <script src="https://www.google.com/recaptcha/api.js"></script>
+  </head>
+  <body>
+  <div class="container">
+    <div class="form">
+      <form onsubmit="return validate_reg_form()" name="reg_form" class="reg-form" action="{{ url_for('handle_signup')}}" method="post">
+        <input type="text" name="username" placeholder="Enter username">
+        <input type="password" name="password" placeholder="Enter password">
+        <input type="text" name="email" placeholder="Enter Email">
+          <div class="g-recaptcha" data-sitekey="6LewXo8UAAAAAPh9iN3_Ha5d4l8jFVBZhdoyqdt5"></div>
+         <button type="submit">Sign Up</button>
+         <p class="message">Already Registered? <a href="#">Login</a> </p>
+      </form>
+
+       <form name="log_form" onsubmit="return validate_log_form()" class="log-form" action="{{ url_for('handle_login') }}" method="post">
+        <input type="text" name="email" placeholder="Enter email">
+        <input type="password" name="password" placeholder="Enter password">
+          <div class="g-recaptcha" data-sitekey="6LewXo8UAAAAAPh9iN3_Ha5d4l8jFVBZhdoyqdt5"></div>
+
+         <button type="submit">Log in</button>
+         <p class="message">Not Registered? <a href="#">Register</a> </p>
+		 <br>
+           <a href="#" class="message" id="forgot_password">Forgot Password?</a>
+       </form>
+
+        <form name="forgot_form" onsubmit="return validate_forgot_form()" id="forgot-form" action="{{  url_for('handle_forgot_password') }}" method="post">
+            <input type="text" name="forgot_email" placeholder="Enter Email">
+            <button type="submit">Send Email</button>
+            <p></p>
+            <a href="#" class="message" id="back_to_login">Remember In Password?</a>
+	  </form>
+    </div>
+  </div>
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+  <script src="static\login_handle.js" type="text/javascript"></script>
+  <script src="https://cdn.rawgit.com/CryptoStore/crypto-js/3.1.2/build/rollups/aes.js"></script>
+  <script src="https://cdn.rawgit.com/CryptoStore/crypto-js/3.1.2/build/components/mode-cfb-min.js"></script>
+  <script src=”path/to/forge.min.js”></script>
+  </body>
+
+</html>

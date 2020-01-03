@@ -1,0 +1,95 @@
+<html lang="en">
+<script src="/socket.io/socket.io.js"></script>
+<head>
+    <title>Menu Page</title>
+    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="static/MenuStyle.css">
+    <link rel='stylesheet' href='https://fonts.googleapis.com/icon?family=Material+Icons'>
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/material-design-iconic-font/2.2.0/css/material-design-iconic-font.min.css'>
+    <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Oxygen|Quicksand'>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="static\menu_handle.js" type="text/javascript"></script>
+    <script src="https://rawgit.com/mattdiamond/Recorderjs/master/dist/recorder.js"></script>
+    <script src="jquery-2.1.0.min.js"></script>
+    <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+</head>
+
+<body>
+<div id="mySidenav" class="sidenav">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+    <form name="form" action="{{ url_for('handle_logout')}}" method="post">
+            <a href="#" onclick="form.submit();">LogOut</a>
+    </form>
+    <a id="Change_Password" onclick="show_form(1)" href="#">Change Password</a>
+    <form action="{{ url_for('change_password')}}" method="post" id="change_password_form">
+        <input type="password" name="new_password" placeholder="Enter password">
+        <button type="submit" onclick="show_form(0)">Change Password</button>
+    </form>
+</div>
+<div class="sidebar"><h1 class="rotate">MyHome</h1></div>
+
+<div class="form-popup" id="myForm">
+    <form name="add_device" action="{{  url_for('add_device') }}" onsubmit="return validate_add_form" method="post"  class="form-container">
+        <h1>Add Device</h1>
+        <label for="Device_name"><b>Device name</b></label>
+        <input type="text" placeholder="Enter Device name" name="Device_name" required>
+        <label for="Device_type"><b>Device type</b></label>
+        <select id="Device_type" name="Device_type">
+      			<option value="ac">Ac</option>
+      			<option value="tv">Tv</option>
+      			<option value="light">Light</option>
+    			</select>
+        <button type="submit" class="btn" onclick="CheckOption()">Add device</button>
+        <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+    </form>
+
+</div>
+
+
+
+<div class="panels">
+
+    <div class="panel">
+
+        <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; </span>
+        <h1><i class="material-icons">highlight</i> Light's</h1>
+        <form action="{{ url_for('turn_on_or_off')}}" method="post">
+            {% for key, value in result.items() %}
+
+            <input type="hidden" value={{key}} name="device_name">
+            <th> {{ key }} </th>
+               {% if value=="on" %}
+                    <input type="checkbox"  name={{key}} checked><br>
+                {% else %}
+                    <input type="checkbox"  name={{key}}><br>
+                {% endif %}
+         {% endfor %}
+
+            <button type="submit" style="background: #3608F0;margin-left:10px;border-radius: 20px;font-size: 14px;cursor: pointer;">Confirm</button>
+        </form>
+        <button type="button" class="add-Button" onclick="openForm()" style="margin-top: 150px;">Add Device +</button>
+
+    </div>
+
+    <div class="panel">
+        <h1><i class="material-icons">tv</i> Tv's</h1>
+        <form action="{{ url_for('turn_on_or_off')}}" method="post" name = "hara">
+            <input type="checkbox"  name="on-off">
+            <button type="submit">Confirm</button>
+        </form>
+    </div>
+
+    <div class="panel">
+        <h1><i class="material-icons">ac_unit</i> Ac's</h1>
+        <form action="{{ url_for('turn_on_or_off')}}" method="post"  class= "check">
+            <input type="checkbox"  name="">
+            <button type="submit">Confirm</button>
+        </form>
+    </div>
+
+</div>
+
+
+</body>
+
+</html>
