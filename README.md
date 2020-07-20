@@ -18,7 +18,7 @@ part of the pages here:
 
 
 
-<img src="C:\Users\magshimim\Desktop\Magshimim\Year C\TheProject\Server\Smart-House\Exmpales Pages\smartHome.png" alt="s" style="zoom: 67%;" />
+<img src="Exmpales Pages\smartHome.png" alt="s" style="zoom: 67%;" />
 
 ****
 
@@ -26,10 +26,10 @@ part of the pages here:
 
 **Authentication page***
 
-![](C:\Users\magshimim\Desktop\Magshimim\Year C\TheProject\Server\Smart-House\Exmpales Pages\flaskApp.png)
+![](Exmpales Pages\flaskApp.png)
 
 
 
 ***feedback page***
 
-![](C:\Users\magshimim\Desktop\Magshimim\Year C\TheProject\Server\Smart-House\Exmpales Pages\smartHome2.png)
+![](Exmpales Pages\smartHome2.png)
