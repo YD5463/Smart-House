@@ -18,7 +18,7 @@ part of the pages here:
 
 
 
-<img src="Exmpales Pages\smartHome.png" alt="s" style="zoom: 67%;" />
+<img src="Exmpales Pages\smartHome.png" alt="about us" style="zoom: 67%;" />
 
 ****
 
@@ -26,10 +26,10 @@ part of the pages here:
 
 **Authentication page***
 
-![](Exmpales Pages\flaskApp.png)
+<img src="Exmpales Pages\flaskApp.png" alt="login" style="zoom: 80%;" />
 
 
 
 ***feedback page***
 
-![](Exmpales Pages\smartHome2.png)
+<img src="Exmpales Pages\smartHome2.png" alt="contact us" style="zoom:80%;" />
